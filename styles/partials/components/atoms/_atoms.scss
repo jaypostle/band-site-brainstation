@@ -1,0 +1,42 @@
+// Icons
+.icon {
+    color: $White;
+}
+
+// Buttons
+a.primary-cta {
+    background-color: $BandSite-Black;
+    color: $White;
+    display: block;
+    // check this height value, "will remain 40px through all sizes"
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 0.25rem;
+    transition: all 200ms;
+
+    &:hover {
+        background-color: $BandSite-DarkBlack;
+    }
+
+    @include medium {
+        min-width: 150px;
+        padding: 0rem 2rem;
+    }
+}
+
+// Dividers
+.divider {
+    border-top: 1px solid $Mercury;
+    width: 100%;
+}
+
+//  Avatars
+.avatar {
+    border-radius: 50%;
+    max-width: 2.25rem;
+    background-color: $Mercury;
+
+    @include medium {
+        max-width: 3rem;
+    }
+}

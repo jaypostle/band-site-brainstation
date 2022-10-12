@@ -1,0 +1,27 @@
+@mixin display-flex($flexDirection: row, $justifyContent: centre, $alignItems: centre, $gap: 1rem) {
+    display: flex;
+    flex-direction: $flexDirection;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    gap: $gap;
+}
+
+// Then, you only need to specify the values that change when you include the mixin:
+
+// include display-flex($gap: 2rem);
+
+// Max Width
+%max-width-desktop {
+    //1020
+    max-width: 63.75rem;
+    margin: 0 auto;
+}
+
+//  @extend %max-width;
+
+%max-width-tablet {
+    //1020
+    max-width: 63.75rem;
+    margin: 0 auto;
+    padding: 2.25rem 0;
+}
