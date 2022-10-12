@@ -1,0 +1,29 @@
+//  Normalize
+@import "partials/global/normalize";
+
+// Helpers
+@import "partials/helpers/breakpoints";
+@import "partials/helpers/mixins";
+
+// Global
+@import "partials/global/fonts";
+@import "partials/global/typography";
+@import "partials/global/variables";
+
+// Components
+@import 'partials/components/header';
+@import 'partials/components/footer';
+@import 'partials/components/tables';
+@import "partials/components/forms";
+
+    // Atoms
+    @import "partials/components/atoms/atoms";
+
+
+// Pages
+@import "partials/pages/home";
+
+
+
+// Animations
+@import "partials/animations/animations";
