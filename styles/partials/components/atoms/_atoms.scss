@@ -1,3 +1,5 @@
+@use "../breakpoints" as breakpoints;
+
 // Icons
 .icon {
     color: $White;
@@ -12,17 +14,24 @@ a.primary-cta {
     height: 2.5rem;
     width: 100%;
     border-radius: 0.25rem;
-    transition: all 200ms;
+    transition: all 400ms ease;
+    text-align: center;
 
     &:hover {
         background-color: $BandSite-DarkBlack;
+        // 
+        // transform: translateX(0.75rem);
+        // background-color: #a9603f;
+        // background-color: $background-white;
+        // color: $primary-text-color;
     }
 
-    @include medium {
-        min-width: 150px;
+    @include breakpoints.medium {
+        min-width: 9.375rem;
         padding: 0rem 2rem;
     }
 }
+
 
 // Dividers
 .divider {
@@ -36,7 +45,7 @@ a.primary-cta {
     max-width: 2.25rem;
     background-color: $Mercury;
 
-    @include medium {
+    @include breakpoints.medium {
         max-width: 3rem;
     }
 }

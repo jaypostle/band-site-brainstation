@@ -1,3 +1,5 @@
+@use "../breakpoints" as breakpoints;
+
 body {
     font-family: Avenir, Arial, Helvetica, sans-serif;
     line-height: 1.5;
@@ -55,7 +57,7 @@ a,
 
 
 // Over Tablet Sizes
-@include medium {
+@include breakpoints.medium {
 
     h1 {
         font-size: 3.75rem;
