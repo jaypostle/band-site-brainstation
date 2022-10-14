@@ -1,10 +1,15 @@
 @use "../global/variables" as variables;
 @use "../helpers/mixins" as mixins;
+@use "../helpers/breakpoints" as breakpoints;
 
 // Columns and spacing
 main {
     section {
-        @extend %max-width-mobile;
+        @include mixins.max-width-mobile;
+        // tablet
+        @include breakpoints.medium {
+            @include mixins.max-width-tablet;
+        }
     }
 }
 
@@ -40,6 +45,63 @@ main {
 
 // Gallery
 .section--gallery {
-    @include mixins.display-flex($flexDirection: column);
+    background-color: variables.$Alabaster;
     padding-bottom: 1rem;
+    
+
+    &__gallery {
+        @include mixins.display-flex($flexDirection: column);
+    
+    }
+}
+
+
+// Tablet
+@include breakpoints.medium {
+    .section--hero {
+        height: 60vh;
+    }
+    .section--about {
+        h2 {
+            margin-bottom: 0.5rem;    
+        }
+        h3 {
+            margin-bottom: 0.25rem;
+        }
+        &__content-wrapper {
+            max-width: 80%;
+            margin: 0 auto;
+
+            &__article {
+                display: flex;
+                gap: 1rem;
+                padding-bottom: 1.5rem;
+            }
+        }
+    }
+    .section--gallery {
+        padding-top: 1rem;
+
+        &__gallery {
+            @include mixins.display-flex($flexDirection: row, $justifyContent: space-between, $gap: 0rem);
+            flex-wrap: wrap;
+            // row-gap: 1rem;
+            row-gap: 5vw;
+        
+        }
+        .gallery-item {
+            // width: (100%/3);
+            flex: 0 1 30%;
+
+            &__img {
+                // object-fit: cover;
+            }
+            
+        }
+
+        h2 {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+    }
 }
