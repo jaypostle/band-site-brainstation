@@ -1,0 +1,280 @@
+/* Box Sizing Reset */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Responsive Media Elements */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+* Remove the margin in all browsers.
+*/
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+figure {
+  margin: 0px;
+}
+
+/* media query for mobile */
+/* media query for tablet */
+/* media query for tablet landscape or medium pixel density devices */
+/* media query for high pixel density devices */
+main section, .footer {
+  min-width: 5rem;
+  max-width: 100vw;
+  padding: 0 1rem;
+}
+
+/* Medium */
+@font-face {
+  font-family: "Avenir";
+  src: url("../../../assets/fonts/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Semi Bold */
+@font-face {
+  font-family: "Avenir";
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+/* Bold */
+@font-face {
+  font-family: "Avenir";
+  src: url("../../../assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+body {
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.375rem;
+}
+
+p {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
+
+.footer p {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
+
+a,
+.label {
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 3.75rem;
+    font-weight: 700;
+    line-height: 4.25rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 4.25rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+  }
+  p {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.375rem;
+  }
+  .footer p {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+  }
+  a,
+.label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+  }
+}
+.header {
+  background-color: #000;
+  padding-top: 1.25rem;
+}
+.header__logo-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.header__logo {
+  max-width: 7.5rem;
+  max-height: 1.25rem;
+}
+.header__nav {
+  list-style-type: none;
+}
+.header__nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+  padding-left: 0px;
+  margin: 0px;
+  margin-top: 1rem;
+}
+.header__nav li {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 2rem;
+  border-bottom: 4px solid rgba(0, 0, 0, 0);
+}
+.header__nav li:hover {
+  border-bottom: 4px solid #fff;
+}
+.header__links {
+  color: #fff;
+  font-size: 1.125rem;
+  text-decoration: none;
+}
+.footer {
+  background-color: #323232;
+  color: #fff;
+  padding-top: 2rem;
+}
+.footer h2 {
+  margin: 0px;
+  margin-bottom: 1rem;
+}
+
+.footer-column-wrapper__social {
+  margin: 0px;
+  padding-left: 0px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 2rem;
+}
+
+.icon {
+  color: #fff;
+  height: 1.5rem;
+}
+
+a.primary-cta {
+  background-color: #323232;
+  color: #fff;
+  display: block;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  transition: all 400ms ease;
+  text-align: center;
+}
+a.primary-cta:hover {
+  background-color: #000;
+}
+@media only screen and (min-width: 768px) {
+  a.primary-cta {
+    min-width: 9.375rem;
+    padding: 0rem 2rem;
+  }
+}
+
+.divider {
+  border-top: 1px solid #E1E1e1;
+  width: 100%;
+}
+
+.avatar {
+  border-radius: 50%;
+  max-width: 2.25rem;
+  background-color: #E1E1e1;
+}
+@media only screen and (min-width: 768px) {
+  .avatar {
+    max-width: 3rem;
+  }
+}
+
+.section--hero {
+  background-color: #323232;
+  color: #fff;
+  background: linear-gradient(to bottom, rgba(1, 1, 1, 0.4), rgba(5, 5, 5, 0.4)), url("../assets/images/hero-bio.jpg");
+  height: 50vh;
+  min-width: 100%;
+  max-width: 100%;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section--about__blockquote {
+  margin: 0px;
+  padding: 1rem 0rem;
+  font-weight: 600;
+}
+.section--about__quote-source {
+  padding-top: 1rem;
+}
+
+.section--gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}/*# sourceMappingURL=styles.css.map */

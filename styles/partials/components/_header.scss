@@ -1,10 +1,52 @@
-@use "../breakpoints" as breakpoints;
+@use "../helpers/breakpoints" as breakpoints;
+@use "../global/variables" as variables;
+@use "../helpers/mixins" as mixins;
 
 
-header {
-    .logo {
+.header {
+    background-color: variables.$BandSite-DarkBlack;
+    padding-top: 1.25rem;
+
+    &__logo-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    &__logo {
         max-width: 7.5rem;
         max-height: 1.25rem;
+    }
+
+    &__nav {
+        // color: variables.$White;
+        list-style-type: none;
+        
+        ul {
+            @include mixins.display-flex($gap: 0rem);
+            padding-left: 0px;
+            margin: 0px;
+            margin-top: 1rem;
+        }
+        
+        li {
+            width: 100%;
+            text-align: center;
+            padding: 0.5rem 2rem;
+            border-bottom: 4px solid rgba(0,0,0,0);
+
+            // delete this later
+            &:hover {
+                border-bottom: 4px solid variables.$White;
+            }
+        }
+
+
+    }
+
+    &__links {
+        color: variables.$White;
+        font-size: 1.125rem;
+        text-decoration: none;
+        
     }
 
     @include breakpoints.medium {

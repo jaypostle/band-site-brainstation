@@ -1,14 +1,18 @@
-@use "../breakpoints" as breakpoints;
+@use "../../helpers/breakpoints" as breakpoints;
+@use "../../global/variables" as variables;
 
 // Icons
 .icon {
-    color: $White;
+    color: variables.$White;
+    // width: 1.5rem;
+    height: 1.5rem;
+  
 }
 
 // Buttons
 a.primary-cta {
-    background-color: $BandSite-Black;
-    color: $White;
+    background-color: variables.$BandSite-Black;
+    color: variables.$White;
     display: block;
     // check this height value, "will remain 40px through all sizes"
     height: 2.5rem;
@@ -18,12 +22,12 @@ a.primary-cta {
     text-align: center;
 
     &:hover {
-        background-color: $BandSite-DarkBlack;
+        background-color: variables.$BandSite-DarkBlack;
         // 
         // transform: translateX(0.75rem);
         // background-color: #a9603f;
-        // background-color: $background-white;
-        // color: $primary-text-color;
+        // background-color: variables.$background-white;
+        // color: variables.$primary-text-color;
     }
 
     @include breakpoints.medium {
@@ -35,7 +39,7 @@ a.primary-cta {
 
 // Dividers
 .divider {
-    border-top: 1px solid $Mercury;
+    border-top: 1px solid variables.$Mercury;
     width: 100%;
 }
 
@@ -43,7 +47,7 @@ a.primary-cta {
 .avatar {
     border-radius: 50%;
     max-width: 2.25rem;
-    background-color: $Mercury;
+    background-color: variables.$Mercury;
 
     @include breakpoints.medium {
         max-width: 3rem;

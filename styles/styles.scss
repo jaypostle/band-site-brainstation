@@ -1,29 +1,26 @@
-//  Normalize
-@import "partials/global/normalize";
+//  Boxsizing
+@use "partials/global/boxsizing";
 
 // Helpers
-@import "partials/helpers/breakpoints";
-@import "partials/helpers/mixins";
+@use "partials/helpers/breakpoints";
+@use "partials/helpers/mixins";
 
 // Global
-@import "partials/global/fonts";
-@import "partials/global/typography";
-@import "partials/global/variables";
+@use "partials/global/fonts";
+@use "partials/global/typography";
+@use "partials/global/variables";
 
 // Components
-@import 'partials/components/header';
-@import 'partials/components/footer';
-@import 'partials/components/tables';
-@import "partials/components/forms";
+@use 'partials/components/header';
+@use 'partials/components/footer';
+@use 'partials/components/tables';
+@use "partials/components/forms";
 
     // Atoms
-    @import "partials/components/atoms/atoms";
-
+    @use "partials/components/atoms/atoms";
 
 // Pages
-@import "partials/pages/home";
-
-
+@use "partials/pages/home";
 
 // Animations
-@import "partials/animations/animations";
+@use "partials/animations/animations";

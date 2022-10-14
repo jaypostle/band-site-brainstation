@@ -1,0 +1,23 @@
+@use "../global/variables" as variables;
+@use "../helpers/mixins" as mixins;
+
+.footer {
+    background-color: variables.$BandSite-Black;
+    color: variables.$White;
+    @extend %max-width-mobile;
+    padding-top: 2rem;
+
+    h2 {
+        margin: 0px;
+        margin-bottom: 1rem;
+    }
+}
+
+.footer-column-wrapper {
+    &__social {
+        margin: 0px;
+        padding-left: 0px;
+        list-style-type: none;
+        @include mixins.display-flex($justifyContent: left, $gap: 2rem);
+    }
+}
