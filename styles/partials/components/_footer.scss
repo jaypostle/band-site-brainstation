@@ -1,0 +1,114 @@
+@use "../global/variables" as variables;
+@use "../helpers/mixins" as mixins;
+@use "../helpers/breakpoints" as breakpoints;
+
+.footer {
+    background-color: variables.$BandSite-Black;
+    color: variables.$White;
+    @include mixins.max-width-mobile;
+    padding-top: 2rem;
+    @include mixins.display-flex($flexDirection: column, $justifyContent: left, $alignItems: left);
+
+    h2 {
+        margin: 0px;
+        margin-bottom: 1rem;
+    }
+    .contact-info {
+       
+
+        &__name {
+            margin: 0.25rem 0;
+        }
+        &__company {
+            margin: 0px;
+            // margin-bottom: 1rem;
+        }
+        &__address {
+            font-style: normal;
+            margin: 1rem 0rem;
+        }
+        &__email {
+            a {
+                color: variables.$White;
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: 400;
+                letter-spacing: 0.5px;
+            }
+        }
+    }
+    &__logo-figure {
+        justify-content: left;
+    }
+   
+}
+
+.footer-column-wrapper {
+    
+    &__social {
+        margin: 0px;
+        padding-left: 0px;
+        list-style-type: none;
+        @include mixins.display-flex($justifyContent: left, $gap: 2rem);
+    }
+    &--logo {
+        margin-top: 2rem;
+    }
+    &--copyright {
+        text-align: left;
+    }
+    
+}
+
+
+// tablet
+@include breakpoints.medium {
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @include mixins.max-width-tablet;
+        padding-top: 2rem;
+
+        // &-column-wrapper:nth-of-type(6){
+        //     grid-column: 3 / span 1;
+            
+        // }
+
+        h2 {
+            line-height: 2.25rem;
+        }
+        
+
+        &-column-wrapper--logo {
+            grid-area: 1 / 3 / 2 / 4;
+            margin-top: 0rem;
+            padding-top: 0.5rem;
+        }
+        &-column-wrapper--copyright {
+            grid-column: span 2;
+            
+        }
+        &-column-wrapper__social {
+            padding-top: 0.5rem;
+        }
+    }
+
+}
+
+@include breakpoints.large {
+    .footer {
+        grid-template-columns: repeat(4, 1fr);
+    // bandsite logo take the full fourth column YEAH That one
+    // social logo spans 2
+        &-column-wrapper:nth-of-type(2) {
+            grid-column: span 2;
+        }
+        &-column-wrapper--logo {
+            grid-area: 1 / 4 / 5 / 5;
+        }
+        &__logo-figure {
+            justify-content: right;
+        }
+        
+    }
+}

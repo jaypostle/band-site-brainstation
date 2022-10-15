@@ -1,0 +1,26 @@
+//  Boxsizing
+@use "partials/global/boxsizing";
+
+// Helpers
+@use "partials/helpers/breakpoints";
+@use "partials/helpers/mixins";
+
+// Global
+@use "partials/global/fonts";
+@use "partials/global/typography";
+@use "partials/global/variables";
+
+// Components
+@use 'partials/components/header';
+@use 'partials/components/footer';
+@use 'partials/components/tables';
+@use "partials/components/forms";
+
+    // Atoms
+    @use "partials/components/atoms/atoms";
+
+// Pages
+@use "partials/pages/home";
+
+// Animations
+@use "partials/animations/animations";

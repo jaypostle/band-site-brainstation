@@ -1,0 +1,55 @@
+@use "../../helpers/breakpoints" as breakpoints;
+@use "../../global/variables" as variables;
+
+// Icons
+.icon {
+    color: variables.$White;
+    // width: 1.5rem;
+    height: 1.5rem;
+  
+}
+
+// Buttons
+a.primary-cta {
+    background-color: variables.$BandSite-Black;
+    color: variables.$White;
+    display: block;
+    // check this height value, "will remain 40px through all sizes"
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 0.25rem;
+    transition: all 400ms ease;
+    text-align: center;
+
+    &:hover {
+        background-color: variables.$BandSite-DarkBlack;
+        // 
+        // transform: translateX(0.75rem);
+        // background-color: #a9603f;
+        // background-color: variables.$background-white;
+        // color: variables.$primary-text-color;
+    }
+
+    @include breakpoints.medium {
+        min-width: 9.375rem;
+        padding: 0rem 2rem;
+    }
+}
+
+
+// Dividers
+.divider {
+    border-top: 1px solid variables.$Mercury;
+    width: 100%;
+}
+
+//  Avatars
+.avatar {
+    border-radius: 50%;
+    max-width: 2.25rem;
+    background-color: variables.$Mercury;
+
+    @include breakpoints.medium {
+        max-width: 3rem;
+    }
+}
