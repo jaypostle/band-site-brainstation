@@ -74,3 +74,11 @@
         }
     }
 }
+
+// desktop
+@include breakpoints.large {
+    .header {
+        @include mixins.max-width-desktop;
+    }
+
+}

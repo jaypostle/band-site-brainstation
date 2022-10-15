@@ -202,6 +202,11 @@ a,
     margin-right: 3rem;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .header {
+    padding: 0 6rem;
+  }
+}
 .footer {
   background-color: #323232;
   color: #fff;
@@ -348,6 +353,11 @@ main section {
     padding: 0 2.25rem;
   }
 }
+@media only screen and (min-width: 1280px) {
+  main section {
+    padding: 0 6rem;
+  }
+}
 
 .section--hero {
   background-color: #323232;
@@ -372,6 +382,8 @@ main section {
 }
 .section--about__quote-source {
   padding-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .section--gallery {
@@ -423,5 +435,12 @@ main section {
   .section--gallery h2 {
     text-align: left;
     margin-bottom: 1rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .section--about__blockquote {
+    max-width: 80%;
+    font-size: 1.25rem;
+    line-height: 1.8;
   }
 }/*# sourceMappingURL=styles.css.map */

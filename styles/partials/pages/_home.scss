@@ -10,6 +10,10 @@ main {
         @include breakpoints.medium {
             @include mixins.max-width-tablet;
         }
+        @include breakpoints.large {
+            @include mixins.max-width-desktop;
+        }
+        
     }
 }
 
@@ -35,10 +39,13 @@ main {
         margin: 0px;
         padding: 1rem 0rem;
         font-weight: 600;
+    
     }
 
     &__quote-source {
         padding-top: 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
     }
     
 }
@@ -93,15 +100,27 @@ main {
             // width: (100%/3);
             flex: 0 1 30%;
 
-            &__img {
-                // object-fit: cover;
-            }
+            // &__img {
+            //     // object-fit: cover;
+            // }
             
         }
 
         h2 {
             text-align: left;
             margin-bottom: 1rem;
+        }
+    }
+}
+
+// Desktop
+@include breakpoints.large {
+    .section--about {
+
+        &__blockquote {
+            max-width: 80%;
+            font-size: 1.25rem;
+            line-height: 1.8;
         }
     }
 }
