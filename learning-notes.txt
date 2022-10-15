@@ -6,11 +6,8 @@
 
 - properties like padding-inline-start are used without serving any purpose. Such properties are used in conjuction with other properties like writing-mode & direction.
 
-- use of CSS grid and its properties is not allowed for any graded submissions
 
 
-
-Important
 
 - SCSS files should never be imported using @import and should be achieved by using @use.
 
