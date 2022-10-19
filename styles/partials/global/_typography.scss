@@ -1,6 +1,6 @@
 @use "../helpers/breakpoints" as breakpoints;
 
-body {
+body, input {
     font-family: Avenir, Arial, Helvetica, sans-serif;
     line-height: 1.5;
 }
@@ -43,10 +43,12 @@ p {
 
 // Labels & Buttons
 a,
-.label {
+label {
     font-size: 0.625rem;
     font-weight: 700;
     line-height: 1.25rem;
+    letter-spacing: 0.25px;
+    text-transform: uppercase;
 }
 
 
@@ -95,7 +97,7 @@ a,
 
     // Labels & Buttons
     a,
-    .label {
+    label {
         font-size: 0.75rem;
         font-weight: 700;
         line-height: 1.25rem;

@@ -63,6 +63,11 @@ main {
     }
 }
 
+// Conversation
+.section--conversation {
+    padding-bottom: 1rem;
+}
+
 
 // Tablet
 @include breakpoints.medium {

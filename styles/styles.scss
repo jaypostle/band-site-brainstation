@@ -15,6 +15,7 @@
 @use 'partials/components/footer';
 @use 'partials/components/tables';
 @use "partials/components/forms";
+@use "partials/components/comment-feed";
 
     // Atoms
     @use "partials/components/atoms/atoms";

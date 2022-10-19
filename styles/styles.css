@@ -63,7 +63,7 @@ figure {
   font-weight: 700;
   font-style: normal;
 }
-body {
+body, input {
   font-family: Avenir, Arial, Helvetica, sans-serif;
   line-height: 1.5;
 }
@@ -99,10 +99,12 @@ p {
 }
 
 a,
-.label {
+label {
   font-size: 0.625rem;
   font-weight: 700;
   line-height: 1.25rem;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
 }
 
 @media only screen and (min-width: 768px) {
@@ -132,7 +134,7 @@ a,
     line-height: 1.25rem;
   }
   a,
-.label {
+label {
     font-size: 0.75rem;
     font-weight: 700;
     line-height: 1.25rem;
@@ -300,12 +302,99 @@ a,
     justify-content: right;
   }
 }
+.comment-feed__form {
+  width: 100%;
+}
+.comment-feed__form .comment-feed__input-text {
+  height: 2.25rem;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #E1E1e1;
+  width: 100%;
+  transition: all 400ms ease;
+  background-color: #FAFAFA;
+  margin-bottom: 1rem;
+}
+.comment-feed__form .comment-feed__input-text:focus {
+  outline: 1px solid #323232;
+}
+.comment-feed__form .comment-feed__input-text:hover {
+  background-color: #E1E1e1;
+}
+.comment-feed__form label {
+  color: #AFAFAF;
+  margin-bottom: 0.25rem;
+}
+.comment-feed__form .error {
+  border: 1px solid #d22d2d;
+}
+.comment-feed__form .comment-feed__submit {
+  border: none;
+  width: 100%;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  .comment-feed__input-text {
+    padding: 1rem;
+  }
+}
+.comment-feed__form-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+.comment-feed__img {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 1.5rem;
+}
+.comment-feed__waterfall__article {
+  display: flex;
+  gap: 1rem;
+  border-top: 1px solid #E1E1e1;
+  border-bottom: 1px solid #E1E1e1;
+}
+.comment-feed__waterfall__text-info {
+  width: 100%;
+}
+.comment-feed__waterfall__meta-info {
+  display: flex;
+  justify-content: space-between;
+}
+.comment-feed__waterfall__name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.comment-feed__waterfall__date-posted {
+  color: #AFAFAF;
+  margin-bottom: 0.5rem;
+}
+.comment-feed__waterfall__comment {
+  margin-top: 0px;
+  line-height: 1.5;
+}
+.comment-feed__waterfall__avatar {
+  background-color: grey;
+  margin-top: 2.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .comment-feed__img {
+    width: 4rem;
+    height: 4rem;
+  }
+}
 .icon {
   color: #fff;
   height: 1.5rem;
 }
 
-a.primary-cta {
+.primary-cta {
   background-color: #323232;
   color: #fff;
   display: block;
@@ -315,11 +404,11 @@ a.primary-cta {
   transition: all 400ms ease;
   text-align: center;
 }
-a.primary-cta:hover {
+.primary-cta:hover {
   background-color: #000;
 }
 @media only screen and (min-width: 768px) {
-  a.primary-cta {
+  .primary-cta {
     min-width: 9.375rem;
     padding: 0rem 2rem;
   }
@@ -396,6 +485,10 @@ main section {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+.section--conversation {
+  padding-bottom: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
