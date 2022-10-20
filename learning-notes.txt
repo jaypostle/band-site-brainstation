@@ -17,3 +17,11 @@
 
 - Use of BEM naming convention is not correct in many places. Revisit the BEM topic and understand how to use modifier. Double hyphens -- have been used as a way to separate the words in class names when a
 single hyphen should be used
+
+
+
+- Biography page should have an underline as it’s the active page.
+- Use of BEM naming convention is incorrect in many places.
+- Should refrain from using normalize.css for future submission and perform resets at component level as needed
+- use of CSS grid and its properties is not allowed for any graded submissions
+- Alt text helps your page's SEO and accessibility ranks and should be included, unique, and descriptive 

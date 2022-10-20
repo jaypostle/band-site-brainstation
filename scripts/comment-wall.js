@@ -175,6 +175,9 @@ const clearInput = (field) => {
 }
 
 const getCurrentDate = () => {
+    // https://stackoverflow.com/questions/11591854/format-date-to-mm-dd-yyyy-in-javascript
+    // discovered using this stackOverflow thread and MDN docs for new Date();
+
     let date = new Date();
 
     const formattedDate = ((date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1))) + '/' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + date.getFullYear();
