@@ -16,9 +16,7 @@
 //STEPS
 
 
-// grab input and submit button dom elements
-// add event listener (upon click) to: create a new task obj with input field value, push that to the array, call renderTask with that object and the target build location
-// reset value of the input field
+
 
 // create submit error function
 // run it if the value of the field is empty
@@ -47,29 +45,35 @@ const comments = [
 // render this in the dom 
 // create a rendertask function that gets called once on page load (to render base 3 comments) and then again when you click add
 
-
+const elCommentWaterfall = document.querySelector('.comment-feed__waterfall');
 
 
 const renderComment = (comment, location) => {
-// forEach loop, create every task as an li
-    console.log(comment)
+
+    // ** Create Article ** //
+    // console.log(comment)
     const newComment = document.createElement('article');
     newComment.classList.add('comment-feed__waterfall__article');
     newComment.setAttribute('id', comment.id);
 
-    // create image
+    // ** Create Image ** //
     // add classes to img comment-feed__img comment-feed__waterfall__avatar
     const newAvatar = document.createElement('img');
     newAvatar.classList.add('comment-feed__img');
     newAvatar.classList.add('comment-feed__waterfall__avatar');
 
+    // This will be replaced soon
+    newAvatar.src = "./assets/images/Mohan-muruge.jpg";
+
     newComment.appendChild(newAvatar);
    
+    // ** Create Div with text info ** //
     // create div with text info class= comment-feed__waterfall__text-info
     const newTextDiv = document.createElement('div');
     newTextDiv.classList.add('comment-feed__waterfall__text-info');
 
 
+    // ** Create Div with meta info ** //
     //comment-feed__waterfall__meta-info
     const newMetaDiv = document.createElement('div');
     newMetaDiv.classList.add('comment-feed__waterfall__meta-info');
@@ -94,6 +98,8 @@ const renderComment = (comment, location) => {
     newCommentp.classList.add('comment-feed__waterfall__comment');
     newTextDiv.appendChild(newCommentp);
 
+
+    // ** FILL THE FIELDS WITH CONTENT ** //
     newName.textContent = 
     `
     ${comment.authour}
@@ -109,23 +115,17 @@ const renderComment = (comment, location) => {
     ${comment.comment}
     `;
 
+    // ** ADD THE Text Content TO End OF the Article ** //
     newComment.appendChild(newTextDiv);
-
     
-
-   
-    // taskList.appendChild(newArticle);
-    // newArticle.classList.add('tasks_task');
-    
-
-    // Build the article of the new comment and place it in the DOM
-    location.appendChild(newComment);
+    // ** ADD THE ARTICLE TO BEGINNING OF WATERFALL ** //
+    location.prepend(newComment);
 
 }
 
 const renderCommentsWaterfall = (arrayOfComments) => {
-    const elCommentWaterfall = document.querySelector('.comment-feed__waterfall');
-    console.log(elCommentWaterfall);
+    // const elCommentWaterfall = document.querySelector('.comment-feed__waterfall');
+    // console.log(elCommentWaterfall);
     
     arrayOfComments.forEach((comment) => {
         renderComment(comment, elCommentWaterfall);
@@ -135,4 +135,29 @@ const renderCommentsWaterfall = (arrayOfComments) => {
 
 renderCommentsWaterfall(comments);
 
+// grab input and submit button dom elements
+// add event listener (upon click) to: create a new task obj with input field value, push that to the array, call renderTask with that object and the target build location
+// reset value of the input field
+
+const elNameField = document.querySelector('.comment-feed__input--name');
+const elCommentField = document.querySelector('.comment-feed__input--comment');
+const elCommentBtn = document.querySelector('.comment-feed__submit');
+
+elCommentBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    if(elCommentField.value == "" || elNameField.value == "") {
+        console.log('you need to add something');
+        return;
+    }
+    // create a new object
+    const newComment = {
+        id: uniqueId(), authour: elNameField.value, comment: elCommentField.value, datePosted: '02/17/2021',
+    }
+    // console.log(newComment);
+
+    // push it to comments array
+    comments.push(newComment);
+    // console.log(comments);
+    renderComment(newComment, elCommentWaterfall)
+})
 
