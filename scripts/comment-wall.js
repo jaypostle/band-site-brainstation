@@ -77,9 +77,16 @@ const renderComment = (comment, location) => {
     newTextDiv.appendChild(newMetaDiv);
    
 
-    ///THESE ARE NOT DONE
+    
             //comment-feed__waterfall__name
+            const newName = document.createElement('p');
+            newName.classList.add('comment-feed__waterfall__name');
             //comment-feed__waterfall__date-posted
+            const newDate = document.createElement('p');
+            newDate.classList.add('comment-feed__waterfall__date-posted');
+
+            newMetaDiv.appendChild(newName);
+            newMetaDiv.appendChild(newDate);
 
         // append this inside the text div
         //comment-feed__waterfall__comment
@@ -87,7 +94,15 @@ const renderComment = (comment, location) => {
     newCommentp.classList.add('comment-feed__waterfall__comment');
     newTextDiv.appendChild(newCommentp);
 
-   
+    newName.textContent = 
+    `
+    ${comment.authour}
+    `;
+
+    newDate.textContent = 
+    `
+    ${comment.datePosted}
+    `;
 
     newCommentp.textContent = 
     `
