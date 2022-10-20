@@ -151,13 +151,34 @@ elCommentBtn.addEventListener('click', function(event) {
     }
     // create a new object
     const newComment = {
-        id: uniqueId(), authour: elNameField.value, comment: elCommentField.value, datePosted: '02/17/2021',
+        id: uniqueId(), authour: elNameField.value, comment: elCommentField.value, datePosted: `${getCurrentDate()}`,
     }
     // console.log(newComment);
 
     // push it to comments array
     comments.push(newComment);
     // console.log(comments);
-    renderComment(newComment, elCommentWaterfall)
+    renderComment(newComment, elCommentWaterfall);
+    clearInput(elNameField);
+    clearInput(elCommentField);
 })
 
+// elNameField.addEventListener('click', function(event) {
+//     clearInput(event.target)
+// })
+// elCommentField.addEventListener('click', function(event) {
+//     clearInput(event.target)
+// })
+
+const clearInput = (field) => {
+    field.value = '';
+}
+
+const getCurrentDate = () => {
+    let date = new Date();
+
+    const formattedDate = ((date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1))) + '/' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + date.getFullYear();
+    // console.log(formattedDate.toString());
+    
+    return formattedDate.toString();
+}
