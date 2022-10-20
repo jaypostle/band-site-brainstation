@@ -539,4 +539,37 @@ main section {
     font-size: 1.375rem;
     line-height: 1.8;
   }
+}
+.shows__header {
+  display: flex;
+}
+
+.shows__header__label--date {
+  flex: 2;
+}
+.shows__header__label--name {
+  flex: 1.5;
+}
+.shows__header__label--location {
+  flex: 3;
+}
+
+.show-article {
+  display: flex;
+}
+
+.show__date {
+  flex: 2;
+}
+
+.show__name {
+  flex: 1.5;
+}
+
+.show__location {
+  flex: 1.5;
+}
+
+.show__button {
+  flex: 1.5;
 }/*# sourceMappingURL=styles.css.map */

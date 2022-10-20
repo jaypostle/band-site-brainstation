@@ -1,0 +1,35 @@
+.shows__header {
+    display: flex;
+}
+
+.shows__header__label {
+    // flex values have to equal their respective show__label values
+    &--date {
+        flex: 2;
+    }
+    &--name {
+        flex: 1.5;
+    }
+    &--location {
+        // take up twice as much space as a standard flex
+        flex: 3;
+    }
+}
+
+.show-article {
+    display: flex;
+}
+.show__date {
+    flex: 2;
+}
+
+.show__name {
+    flex: 1.5;
+}
+
+.show__location {
+    flex: 1.5;
+}
+.show__button {
+    flex: 1.5;
+}
