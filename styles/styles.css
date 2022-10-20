@@ -551,6 +551,7 @@ main section {
 
 .shows__header {
   display: flex;
+  padding: 1rem;
 }
 
 .shows__header__label--date {
