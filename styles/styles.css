@@ -540,6 +540,15 @@ main section {
     line-height: 1.8;
   }
 }
+.show-article {
+  border-bottom: 1px solid lightgrey;
+  padding: 1rem;
+}
+
+.show__button {
+  text-align: center;
+}
+
 .shows__header {
   display: flex;
 }
@@ -572,4 +581,9 @@ main section {
 
 .show__button {
   flex: 1.5;
+  margin-top: 1rem;
+}
+
+.show__label {
+  display: none;
 }/*# sourceMappingURL=styles.css.map */

@@ -2,6 +2,9 @@
 // You must have an array in JavaScript with all of concerts data and render the concerts HTML dynamically using the array data. It’s up to your discretion to decide on properties you create to represent all of the individual concert data.
 // No template literals should be used. All dynamic HTML should be added to DOM via DOM Methods for individual elements. Avoid bulk assigning stringified HTML using innerHTML
 // Utilize your knowledge of JavaScript DOM Manipulation and built in functions to create all the content between the hero image and the footer, as well as create your own functions as necessary. There should be no need to have any shows content housed within your html file for this section.
+
+
+
 // The individual rows of the Shows table will have different styling applied depending on the state of the table row. Utilize your knowledge of both JavaScript and Sass to accomplish this.
 // The individual rows of the Shows table need to have a hover state applied to them when a cursor is hovering over the table row, as per style guide. This can be done by utilizing a pseudo class within your Sass.
 // Additionally, clicking on an individual row should make that row "selected", applying a modifier CSS class via JavaScript. The row should stay “selected” until another row is clicked. Utilize your knowledge of both JavaScript and Sass to accomplish this.
@@ -96,7 +99,7 @@ const renderConcert = (concertObj, renderLocation) => {
         // build a label with class show__label
         // append to div just built
         const newLabelName = document.createElement('label');
-        newLabelName.classList.add('show__name');
+        newLabelName.classList.add('show__label');
         newDivName.appendChild(newLabelName);
         // build a p with class show__data--date
         // append to div just built
@@ -112,7 +115,7 @@ const renderConcert = (concertObj, renderLocation) => {
         // build a label with class show__label
         // append to div just built
         const newLabelLocation = document.createElement('label');
-        newLabelLocation.classList.add('show__location');
+        newLabelLocation.classList.add('show__label');
         newDivLocation.appendChild(newLabelLocation);
         // build a p with class show__data--date
         // append to div just built
@@ -120,10 +123,6 @@ const renderConcert = (concertObj, renderLocation) => {
         newPLocation.classList.add('show__date--location');
         newDivLocation.appendChild(newPLocation);
 
-
-
-
-    // -------- //
 
     /* Build the show button */
     const showButton = document.createElement('a');

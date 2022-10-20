@@ -1,3 +1,12 @@
+.show-article {
+    border-bottom: 1px solid lightgrey;
+    padding: 1rem;
+}
+
+.show__button {
+    text-align: center;
+}
+/// Tablet or bigger
 .shows__header {
     display: flex;
 }
@@ -16,6 +25,8 @@
     }
 }
 
+
+
 .show-article {
     display: flex;
 }
@@ -32,4 +43,10 @@
 }
 .show__button {
     flex: 1.5;
+   
+    margin-top: 1rem;
+}
+
+.show__label {
+    display: none;
 }
