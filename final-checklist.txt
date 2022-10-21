@@ -1,0 +1,17 @@
+/ Overall
+
+Alt text
+
+/ home
+
+Comments section fix margin of avatars
+form validation
+-- Adjust the state of the form fields to show the error state that is specified in the Style Guide.
+-- If there are no errors:
+Clear any error states from the form fields.
+
+
+/ shows
+-- hover states for table rows
+-- active effects
+

@@ -2,9 +2,7 @@
 
 
 
-- A lot of selectors does not have css properties within them and should have been removed. Same thing goes for any pieces of code that is not used in the project (mixins and variables for responsive design)
 
-- properties like padding-inline-start are used without serving any purpose. Such properties are used in conjuction with other properties like writing-mode & direction.
 
 
 
@@ -12,11 +10,6 @@
 - SCSS files should never be imported using @import and should be achieved by using @use.
 
 - Element selectors should not be used unless used for universal resets which should be performed at component level anyways.
-
-- Should refrain from using normalize.css for future submission and perform resets at component level as needed
-
-- Use of BEM naming convention is not correct in many places. Revisit the BEM topic and understand how to use modifier. Double hyphens -- have been used as a way to separate the words in class names when a
-single hyphen should be used
 
 
 
