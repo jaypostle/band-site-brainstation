@@ -70,13 +70,13 @@ body, input {
 
 h1 {
   font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 2rem;
+  font-weight: 600;
+  line-height: 3rem;
 }
 
 h2 {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 2rem;
 }
 
@@ -110,12 +110,12 @@ label {
 @media only screen and (min-width: 768px) {
   h1 {
     font-size: 3.75rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 4.25rem;
   }
   h2 {
     font-size: 2.25rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 4.25rem;
   }
   h3 {
@@ -394,7 +394,7 @@ label {
   height: 1.5rem;
 }
 
-.primary-cta {
+.primary-cta, .show__button {
   background-color: #323232;
   color: #fff;
   display: block;
@@ -404,14 +404,18 @@ label {
   transition: all 400ms ease;
   text-align: center;
 }
-.primary-cta:hover {
+.primary-cta:hover, .show__button:hover {
   background-color: #000;
 }
 @media only screen and (min-width: 768px) {
-  .primary-cta {
+  .primary-cta, .show__button {
     min-width: 9.375rem;
     padding: 0rem 2rem;
   }
+}
+
+.show__button {
+  padding: 0;
 }
 
 .divider {
@@ -540,51 +544,125 @@ main section {
     line-height: 1.8;
   }
 }
-.show-article {
-  border-bottom: 1px solid lightgrey;
-  padding: 1rem;
+.section--hero {
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(to bottom, rgba(1, 1, 1, 0.4), rgba(5, 5, 5, 0.4)), url(../assets/images/hero-shows.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 50vh;
+  min-width: 100%;
+  max-width: 100%;
+  color: #fff;
+  gap: 1rem;
+}
+.section--hero .hero-soundcloud-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.section--hero .hero-soundcloud-wrapper h1 {
+  flex: 2.5;
+}
+.section--hero .hero-soundcloud-wrapper #soundcloud-iframe {
+  flex: 2;
 }
 
-.show__button {
-  text-align: center;
+main.shows .hero--shows {
+  align-items: left;
+}
+
+.concert-label, .show__label, .shows__header__label--location, .shows__header__label--name, .shows__header__label--date {
+  color: #AFAFAF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+}
+
+.section--shows {
+  margin-top: 2rem;
 }
 
 .shows__header {
-  display: flex;
-  padding: 1rem;
-}
-
-.shows__header__label--date {
-  flex: 2;
-}
-.shows__header__label--name {
-  flex: 1.5;
-}
-.shows__header__label--location {
-  flex: 3;
-}
-
-.show-article {
-  display: flex;
-}
-
-.show__date {
-  flex: 2;
-}
-
-.show__name {
-  flex: 1.5;
-}
-
-.show__location {
-  flex: 1.5;
-}
-
-.show__button {
-  flex: 1.5;
-  margin-top: 1rem;
-}
-
-.show__label {
   display: none;
+}
+.show-article {
+  margin: 1rem 0rem;
+  border-bottom: 1px solid lightgrey;
+}
+.show-article div p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+.show__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5rem 0rem;
+}
+.show__date--date {
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 768px) {
+  .section--shows h2 {
+    padding-left: 1rem;
+  }
+  .shows-wrapper {
+    margin-bottom: 3rem;
+  }
+  .shows__header {
+    display: flex;
+    padding: 0rem 1rem;
+  }
+  .shows__header__label--date {
+    flex: 2;
+  }
+  .shows__header__label--name {
+    flex: 1.5;
+  }
+  .shows__header__label--location {
+    flex: 3;
+  }
+  .show-article {
+    display: flex;
+    padding: 0rem 1rem;
+  }
+  .show__date {
+    flex: 2;
+  }
+  .show__name {
+    flex: 1.5;
+  }
+  .show__location {
+    flex: 1.5;
+  }
+  .show__button {
+    flex: 1.5;
+    margin-top: 0rem;
+  }
+  .show__label {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .section--shows {
+    display: flex;
+    padding-top: 2rem;
+  }
+  .section--shows h2 {
+    flex: 1;
+    margin-top: -1rem;
+    line-height: 2.25rem;
+    padding-left: 0px;
+  }
+  .shows-wrapper {
+    flex: 4;
+  }
+  .show-article {
+    padding: 1rem;
+  }
 }/*# sourceMappingURL=styles.css.map */

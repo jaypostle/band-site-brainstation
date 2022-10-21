@@ -36,6 +36,11 @@
     }
 }
 
+.show__button {
+    @extend .primary-cta;
+    padding: 0;
+}
+
 // Dividers
 .divider {
     border-top: 1px solid variables.$Mercury;
