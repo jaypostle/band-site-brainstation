@@ -3,6 +3,8 @@
 @use "../helpers/mixins" as mixins;
 
 
+
+
 .header {
     background-color: variables.$BandSite-Black;
     padding-top: 1.25rem;
@@ -48,6 +50,7 @@
         color: variables.$White;
         font-size: 1.125rem;
         text-decoration: none;
+        font-weight: 600;
         
     }
 
@@ -81,4 +84,11 @@
         @include mixins.max-width-desktop;
     }
 
+}
+
+
+
+////// Active Styles
+.header ul li.active-nav {
+border-bottom: 4px solid variables.$White;
 }

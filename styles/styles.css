@@ -180,6 +180,7 @@ label {
   color: #fff;
   font-size: 1.125rem;
   text-decoration: none;
+  font-weight: 600;
 }
 
 @media only screen and (min-width: 768px) {
@@ -209,6 +210,10 @@ label {
     padding: 0 6rem;
   }
 }
+.header ul li.active-nav {
+  border-bottom: 4px solid #fff;
+}
+
 .footer {
   background-color: #323232;
   color: #fff;
@@ -290,7 +295,9 @@ label {
 }
 @media only screen and (min-width: 1280px) {
   .footer {
+    padding: 2rem 6rem;
     grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
   }
   .footer-column-wrapper:nth-of-type(2) {
     grid-column: span 2;
@@ -461,6 +468,9 @@ main section {
   max-width: 100%;
   background-position: center;
   background-size: cover;
+}
+
+.hero--home {
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -545,8 +555,11 @@ main section {
   }
 }
 .section--hero {
+  display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: left;
+  gap: 1rem;
   background: linear-gradient(to bottom, rgba(1, 1, 1, 0.4), rgba(5, 5, 5, 0.4)), url(../assets/images/hero-shows.jpg);
   background-position: center;
   background-size: cover;
@@ -556,21 +569,24 @@ main section {
   color: #fff;
   gap: 1rem;
 }
+.section--hero h3 {
+  margin: 0px;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
 .section--hero .hero-soundcloud-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 1rem;
 }
 .section--hero .hero-soundcloud-wrapper h1 {
   flex: 2.5;
+  margin-top: 0.25rem;
 }
 .section--hero .hero-soundcloud-wrapper #soundcloud-iframe {
   flex: 2;
-}
-
-main.shows .hero--shows {
-  align-items: left;
 }
 
 .concert-label, .show__label, .shows__header__label--location, .shows__header__label--name, .shows__header__label--date {
@@ -649,6 +665,9 @@ main.shows .hero--shows {
   }
 }
 @media only screen and (min-width: 1280px) {
+  .section--hero .hero-soundcloud-wrapper {
+    flex-direction: row;
+  }
   .section--shows {
     display: flex;
     padding-top: 2rem;

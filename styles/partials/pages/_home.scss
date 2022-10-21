@@ -28,8 +28,12 @@ main {
     max-width: 100%;
     background-position: center;
     background-size: cover;
-    @include mixins.display-flex($justifyContent: left);
+    // @include mixins.display-flex($justifyContent: left);
     
+}
+
+.hero--home {
+    @include mixins.display-flex($justifyContent: left);
 }
 
 // About
