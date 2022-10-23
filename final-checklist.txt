@@ -1,7 +1,3 @@
-/ Overall
-
-Alt text
-
 / home
 
 Comments section fix margin of avatars

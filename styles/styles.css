@@ -292,6 +292,9 @@ label {
   .footer-column-wrapper__social {
     padding-top: 0.5rem;
   }
+  .footer .contact-info__email a {
+    font-size: 0.75rem;
+  }
 }
 @media only screen and (min-width: 1280px) {
   .footer {
@@ -333,7 +336,7 @@ label {
   margin-bottom: 0.25rem;
 }
 .comment-feed__form .error {
-  border: 1px solid #d22d2d;
+  outline: 1px solid #d22d2d;
 }
 .comment-feed__form .comment-feed__submit {
   border: none;
@@ -343,8 +346,16 @@ label {
 }
 
 @media only screen and (min-width: 768px) {
+  .comment-feed__form {
+    display: flex;
+    flex-direction: column;
+  }
   .comment-feed__input-text {
     padding: 1rem;
+  }
+  .comment-feed__submit {
+    align-self: flex-end;
+    width: 30% !important;
   }
 }
 .comment-feed__form-wrapper {
@@ -391,9 +402,37 @@ label {
 }
 
 @media only screen and (min-width: 768px) {
+  .comment-feed {
+    max-width: 80%;
+    margin: 0 auto;
+  }
   .comment-feed__img {
     width: 4rem;
     height: 4rem;
+    margin-top: 0rem;
+  }
+  .comment-feed__img--sample {
+    margin-top: 1.375rem;
+  }
+  .comment-feed__waterfall__article {
+    padding: 1rem 0rem;
+    align-items: flex-start;
+  }
+  .comment-feed__waterfall__meta-info {
+    margin-bottom: 0.5rem;
+  }
+  .comment-feed__waterfall__name {
+    margin: 0px;
+  }
+  .comment-feed__waterfall__date-posted {
+    margin: 0px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .comment-feed {
+    max-width: 60%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
   }
 }
 .icon {
@@ -645,7 +684,16 @@ main section {
   }
   .show-article {
     display: flex;
-    padding: 0rem 1rem;
+    padding: 1rem 1rem;
+    margin: 0px;
+    align-items: center;
+    cursor: pointer;
+  }
+  .show-article:hover {
+    background-color: #FAFAFA;
+  }
+  .show-article div p {
+    margin-top: 1rem;
   }
   .show__date {
     flex: 2;
@@ -659,6 +707,7 @@ main section {
   .show__button {
     flex: 1.5;
     margin-top: 0rem;
+    margin: 0px;
   }
   .show__label {
     display: none;
@@ -684,4 +733,7 @@ main section {
   .show-article {
     padding: 1rem;
   }
+}
+.selected-row {
+  background-color: #E1E1e1;
 }/*# sourceMappingURL=styles.css.map */

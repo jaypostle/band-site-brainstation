@@ -146,7 +146,9 @@ const elCommentBtn = document.querySelector('.comment-feed__submit');
 elCommentBtn.addEventListener('click', function(event) {
     event.preventDefault();
     if(elCommentField.value == "" || elNameField.value == "") {
-        console.log('you need to add something');
+        // console.log('you need to add something');
+        errorState(elCommentField, elNameField);
+        // ADD MY FUNCTION ERROR STATE
         return;
     }
     // create a new object
@@ -184,4 +186,23 @@ const getCurrentDate = () => {
     // console.log(formattedDate.toString());
     
     return formattedDate.toString();
+}
+
+function errorState(fieldOne, fieldTwo) {
+    // console.log('error state ran')
+    fieldOne.classList.add('error');
+    fieldTwo.classList.add('error');
+    fieldOne.setAttribute("placeholder", 'Please write a comment.');
+    fieldTwo.setAttribute("placeholder", 'Please write your name.')
+
+    setTimeout(() => clearError(fieldOne, fieldTwo), 2000);
+
+}
+
+function clearError(fieldOne, fieldTwo) {
+    // console.log('clear error state ran');
+    fieldOne.setAttribute("placeholder", 'Add a new comment.');
+    fieldTwo.setAttribute("placeholder", 'Enter your name.')
+    fieldOne.classList.remove('error');
+    fieldTwo.classList.remove('error');
 }

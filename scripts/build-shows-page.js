@@ -64,6 +64,7 @@ const elShowsWrapper = document.querySelector('.shows-wrapper');
 
 // Render a single concert
 const renderConcert = (concertObj, renderLocation) => {
+   
     // build article
     // add class
     const newConcert = document.createElement('article');

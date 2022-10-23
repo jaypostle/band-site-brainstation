@@ -33,15 +33,17 @@
         }
 
         .error {
-            border: 1px solid variables.$Error-Red;
+            outline: 1px solid variables.$Error-Red;
         }
 
-        .comment-feed__input--name {
+        // .comment-feed__input--name {
 
-        }
-        .comment-feed__input--comment {
-                // different height
-        }
+        // }
+        // .comment-feed__input--comment {
+        //         // different height
+        //         // height: 10rem;
+
+        // }
     
 
     // submit button
@@ -56,8 +58,23 @@
 // Tablets
 @include breakpoints.medium {
 
+    .comment-feed__form {
+        display: flex;
+        flex-direction: column;
+    }
     .comment-feed__input-text {
         padding: 1rem;
     }
 
+    .comment-feed__submit {
+        align-self: flex-end;
+        width: 30%!important;
+    }
+
 }
+
+
+
+// .error-state {
+//     outline: 
+// }

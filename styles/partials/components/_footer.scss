@@ -91,6 +91,12 @@
         &-column-wrapper__social {
             padding-top: 0.5rem;
         }
+
+        .contact-info {
+            &__email a {
+                font-size: 0.75rem;
+            }
+        }
     }
 
 }

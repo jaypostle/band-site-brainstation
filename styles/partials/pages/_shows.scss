@@ -140,7 +140,18 @@
     .show {
         &-article {
             display: flex;
-            padding: 0rem 1rem;
+            padding: 1rem 1rem;
+            margin: 0px;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: variables.$Alabaster;
+            }
+
+            div p {
+                margin-top: 1rem;
+            }
         }
         &__date {
             flex: 2;
@@ -155,6 +166,7 @@
             flex: 1.5;
             // height: 3rem;
             margin-top: 0rem;
+            margin: 0px;
         }
         &__label {
             display: none;
@@ -195,4 +207,10 @@
         
     }
     
+}
+
+
+// Row selected Class
+.selected-row {
+    background-color: variables.$Mercury;
 }

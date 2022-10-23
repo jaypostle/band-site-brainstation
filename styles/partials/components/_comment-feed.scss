@@ -63,11 +63,45 @@
 @include breakpoints.medium {
 
     .comment-feed {
+        max-width: 80%;
+        margin: 0 auto;
+        
         &__img {
             width: 4rem;
             height: 4rem;
+            margin-top: 0rem;
+
+            &--sample {
+                margin-top: 1.375rem;
+            }
+        }
+        &__waterfall {
+        
+            &__article {
+                padding: 1rem 0rem;
+                align-items: flex-start;
+            }
+            &__meta-info {
+                margin-bottom: 0.5rem;
+            }
+            &__name {
+                margin: 0px;
+            }
+            &__date-posted {
+                margin: 0px;
+            }
         }
     }
- 
 
 }
+
+@include breakpoints.large {
+    .comment-feed {
+        max-width: 60%;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+}
+
+
