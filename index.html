@@ -14,16 +14,16 @@
         </figure>
         <nav class="header__nav">
             <ul>
-                <li><a href="./index.html" class="header__links">Biography</a></li>
-                <li><a href="./pages/shows" class="header__links">Shows</a></li>
+                <li class="active-nav"><a href="./index.html" class="header__links">Biography</a></li>
+                <li><a href="./pages/shows.html" class="header__links">Shows</a></li>
             </ul>
         </nav>
     </header>
     <main class="main home">
-        <section class="section--hero">
+        <section class="section--hero hero--home">
             <h1>The Bees Knees</h1>
         </section>
-        <section class="section--about">
+        <section class="section--about ">
             <h2>About the Musicians</h2>
             <div class="section--about__content-wrapper">
                 <figure class="section--about__figure"><img src="./assets/images/band.jpg" alt="photo of the band, Bees Knees" class="section--hero__img"></figure>
@@ -71,55 +71,76 @@
                 </article>
             </div>
         </section>
-        <footer class="footer">
-            <div class="footer-column-wrapper">
-                <h2>Get in Touch </h2>
+        <section class="section--conversation">
+            <h2>Join the Conversation</h2>
+            <!-- wrapper for form -->
+            <div class="comment-feed">
+                <div class="comment-feed__form-wrapper">
+                    <img src="./assets/images/Mohan-muruge.jpg" alt="Mohan Murage" class="comment-feed__img comment-feed__img--sample">
+                    <form action="" class="comment-feed__form">
+                        <label for="name">Name:</label>
+                        <input class="comment-feed__input-text comment-feed__input--name" type="text" id="name" name="name" placeholder="Enter your name">
+                        <label for="comment">Comment:</label>
+                        <input class="comment-feed__input-text comment-feed__input--comment" type="textarea" rows="3" cols="50" id="comment" name="comment" placeholder="Add a new comment">
+                        <!-- <textarea id="comment" name="comment" cols="30" rows="5" placeholder="Add a new comment"></textarea> -->
+                        <input class="primary-cta comment-feed__submit" type="submit" value="Comment">
+                    </form>
+                </div>
+                <div class="comment-feed__waterfall">
+                </div>
             </div>
-            <div class="footer-column-wrapper">
-                
-                <ul class="footer-column-wrapper__social">
-                    <li><a href="https://instagram.com" class="footer-column-wrapper__links"><img src="./assets/icons/Icon-instagram.svg" alt="instagram link" class="icon"></a></li>
-                    <li><a href="https://facebook.com" class="footer-column-wrapper__links"><img src="./assets/icons/Icon-facebook.svg" alt="facebook link" class="icon"></a></li>
-                    <li><a href="https://twitter.com" class="footer-column-wrapper__links"><img src="./assets/icons/Icon-twitter.svg" alt="twitter icon" class="icon"></a></li>
-                </ul>
-            </div>
-            <div class="footer-column-wrapper">
-                <article class="contact-info">
-                    <h4 class="contact-info__name">Cam Adams</h4>
-                    <h4 class="contact-info__company">The Bees Knees Management</h4>
-                    <address class="contact-info__address">503 Broadway Penthouse</address>
-                    <address class="contact-info__address">New York, NY 10012, USA</address>
-                    <p class="contact-info__email"><a href="mailto:info@thebeesknees.com">info@thebeesknees.com</a></p>
-                </article>
-            </div>
-            <div class="footer-column-wrapper">
-                <article class="contact-info">
-                    <h4 class="contact-info__name">Pearl Greeg</h4>
-                    <h4 class="contact-info__company">Limitless Artist Group</h4>
-                    <address class="contact-info__address">Booking Agent for</address>
-                    <address class="contact-info__address">US / South America / Japan</address>
-                    <p class="contact-info__email"><a href="mailto:pearl.gregg@limitlessag.com">pearl.gregg@limitlessag.com</a></p>
-                </article>
-            </div>
-            <div class="footer-column-wrapper">
-                <article class="contact-info">
-                    <h4 class="contact-info__name">Carson Whyte</h4>
-                    <h4 class="contact-info__company">ARCH Entertainment</h4>
-                    <address class="contact-info__address">Booking Agent for</address>
-                    <address class="contact-info__address">UK / EU / AU</address>
-                    <p class="contact-info__email"><a href="mailto:cwhyte@archentertainment.com">cwhyte@archentertainment.com</a></p>
-                </article>
-            </div>
-            <div class="footer-column-wrapper footer-column-wrapper--logo">
-                <figure class="header__logo-wrapper footer__logo-figure">
-                    <img class="header__logo footer__logo-img" src="./assets/logos/Logo-bandsite.svg" alt="Bandsite Logo">
-                </figure>
-            </div>
-            <div class="footer-column-wrapper footer-column-wrapper--copyright">
-                <p>Copyright The Bees Knees &copy; 2021 All Rights Reserved</p>
-            </div>
-
-        </footer>
+        </section>   
     </main>
+
+    <footer class="footer">
+        <div class="footer-column-wrapper">
+            <h2>Get in Touch </h2>
+        </div>
+        <div class="footer-column-wrapper">
+            
+            <ul class="footer-column-wrapper__social">
+                <li><a href="https://instagram.com" class="footer-column-wrapper__links"><img src="./assets/icons/Icon-instagram.svg" alt="instagram link" class="icon"></a></li>
+                <li><a href="https://facebook.com" class="footer-column-wrapper__links"><img src="./assets/icons/Icon-facebook.svg" alt="facebook link" class="icon"></a></li>
+                <li><a href="https://twitter.com" class="footer-column-wrapper__links"><img src="./assets/icons/Icon-twitter.svg" alt="twitter icon" class="icon"></a></li>
+            </ul>
+        </div>
+        <div class="footer-column-wrapper">
+            <article class="contact-info">
+                <h4 class="contact-info__name">Cam Adams</h4>
+                <h4 class="contact-info__company">The Bees Knees Management</h4>
+                <address class="contact-info__address">503 Broadway Penthouse</address>
+                <address class="contact-info__address">New York, NY 10012, USA</address>
+                <p class="contact-info__email"><a href="mailto:info@thebeesknees.com">info@thebeesknees.com</a></p>
+            </article>
+        </div>
+        <div class="footer-column-wrapper">
+            <article class="contact-info">
+                <h4 class="contact-info__name">Pearl Greeg</h4>
+                <h4 class="contact-info__company">Limitless Artist Group</h4>
+                <address class="contact-info__address">Booking Agent for</address>
+                <address class="contact-info__address">US / South America / Japan</address>
+                <p class="contact-info__email"><a href="mailto:pearl.gregg@limitlessag.com">pearl.gregg@limitlessag.com</a></p>
+            </article>
+        </div>
+        <div class="footer-column-wrapper">
+            <article class="contact-info">
+                <h4 class="contact-info__name">Carson Whyte</h4>
+                <h4 class="contact-info__company">ARCH Entertainment</h4>
+                <address class="contact-info__address">Booking Agent for</address>
+                <address class="contact-info__address">UK / EU / AU</address>
+                <p class="contact-info__email"><a href="mailto:cwhyte@archentertainment.com">cwhyte@archentertainment.com</a></p>
+            </article>
+        </div>
+        <div class="footer-column-wrapper footer-column-wrapper--logo">
+            <figure class="header__logo-wrapper footer__logo-figure">
+                <a href="./index.html"><img class="header__logo footer__logo-img" src="./assets/logos/Logo-bandsite.svg" alt="Bandsite Logo"></a>
+            </figure>
+        </div>
+        <div class="footer-column-wrapper footer-column-wrapper--copyright">
+            <p>Copyright The Bees Knees &copy; 2021 All Rights Reserved</p>
+        </div>
+
+    </footer>
+    <script src="./scripts/comment-wall.js"></script>
 </body>
 </html>

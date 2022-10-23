@@ -10,7 +10,7 @@
 }
 
 // Buttons
-a.primary-cta {
+.primary-cta {
     background-color: variables.$BandSite-Black;
     color: variables.$White;
     display: block;
@@ -36,6 +36,10 @@ a.primary-cta {
     }
 }
 
+.show__button {
+    @extend .primary-cta;
+    padding: 0;
+}
 
 // Dividers
 .divider {

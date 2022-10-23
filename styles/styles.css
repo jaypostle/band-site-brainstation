@@ -63,20 +63,20 @@ figure {
   font-weight: 700;
   font-style: normal;
 }
-body {
+body, input {
   font-family: Avenir, Arial, Helvetica, sans-serif;
   line-height: 1.5;
 }
 
 h1 {
   font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 2rem;
+  font-weight: 600;
+  line-height: 3rem;
 }
 
 h2 {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 2rem;
 }
 
@@ -99,21 +99,23 @@ p {
 }
 
 a,
-.label {
+label {
   font-size: 0.625rem;
   font-weight: 700;
   line-height: 1.25rem;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
 }
 
 @media only screen and (min-width: 768px) {
   h1 {
     font-size: 3.75rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 4.25rem;
   }
   h2 {
     font-size: 2.25rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 4.25rem;
   }
   h3 {
@@ -132,7 +134,7 @@ a,
     line-height: 1.25rem;
   }
   a,
-.label {
+label {
     font-size: 0.75rem;
     font-weight: 700;
     line-height: 1.25rem;
@@ -178,6 +180,7 @@ a,
   color: #fff;
   font-size: 1.125rem;
   text-decoration: none;
+  font-weight: 600;
 }
 
 @media only screen and (min-width: 768px) {
@@ -207,6 +210,10 @@ a,
     padding: 0 6rem;
   }
 }
+.header ul li.active-nav {
+  border-bottom: 4px solid #fff;
+}
+
 .footer {
   background-color: #323232;
   color: #fff;
@@ -285,10 +292,15 @@ a,
   .footer-column-wrapper__social {
     padding-top: 0.5rem;
   }
+  .footer .contact-info__email a {
+    font-size: 0.75rem;
+  }
 }
 @media only screen and (min-width: 1280px) {
   .footer {
+    padding: 2rem 6rem;
     grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
   }
   .footer-column-wrapper:nth-of-type(2) {
     grid-column: span 2;
@@ -300,12 +312,135 @@ a,
     justify-content: right;
   }
 }
+.comment-feed__form {
+  width: 100%;
+}
+.comment-feed__form .comment-feed__input-text {
+  height: 2.25rem;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #E1E1e1;
+  width: 100%;
+  transition: all 400ms ease;
+  background-color: #FAFAFA;
+  margin-bottom: 1rem;
+}
+.comment-feed__form .comment-feed__input-text:focus {
+  outline: 1px solid #323232;
+}
+.comment-feed__form .comment-feed__input-text:hover {
+  background-color: #E1E1e1;
+}
+.comment-feed__form label {
+  color: #AFAFAF;
+  margin-bottom: 0.25rem;
+}
+.comment-feed__form .error {
+  outline: 1px solid #d22d2d;
+}
+.comment-feed__form .comment-feed__submit {
+  border: none;
+  width: 100%;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  .comment-feed__form {
+    display: flex;
+    flex-direction: column;
+  }
+  .comment-feed__input-text {
+    padding: 1rem;
+  }
+  .comment-feed__submit {
+    align-self: flex-end;
+    width: 30% !important;
+  }
+}
+.comment-feed__form-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+.comment-feed__img {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 1.5rem;
+}
+.comment-feed__waterfall__article {
+  display: flex;
+  gap: 1rem;
+  border-top: 1px solid #E1E1e1;
+  border-bottom: 1px solid #E1E1e1;
+}
+.comment-feed__waterfall__text-info {
+  width: 100%;
+}
+.comment-feed__waterfall__meta-info {
+  display: flex;
+  justify-content: space-between;
+}
+.comment-feed__waterfall__name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.comment-feed__waterfall__date-posted {
+  color: #AFAFAF;
+  margin-bottom: 0.5rem;
+}
+.comment-feed__waterfall__comment {
+  margin-top: 0px;
+  line-height: 1.5;
+}
+.comment-feed__waterfall__avatar {
+  background-color: grey;
+  margin-top: 2.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .comment-feed {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .comment-feed__img {
+    width: 4rem;
+    height: 4rem;
+    margin-top: 0rem;
+  }
+  .comment-feed__img--sample {
+    margin-top: 1.375rem;
+  }
+  .comment-feed__waterfall__article {
+    padding: 1rem 0rem;
+    align-items: flex-start;
+  }
+  .comment-feed__waterfall__meta-info {
+    margin-bottom: 0.5rem;
+  }
+  .comment-feed__waterfall__name {
+    margin: 0px;
+  }
+  .comment-feed__waterfall__date-posted {
+    margin: 0px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .comment-feed {
+    max-width: 60%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+}
 .icon {
   color: #fff;
   height: 1.5rem;
 }
 
-a.primary-cta {
+.primary-cta, .show__button {
   background-color: #323232;
   color: #fff;
   display: block;
@@ -315,14 +450,18 @@ a.primary-cta {
   transition: all 400ms ease;
   text-align: center;
 }
-a.primary-cta:hover {
+.primary-cta:hover, .show__button:hover {
   background-color: #000;
 }
 @media only screen and (min-width: 768px) {
-  a.primary-cta {
+  .primary-cta, .show__button {
     min-width: 9.375rem;
     padding: 0rem 2rem;
   }
+}
+
+.show__button {
+  padding: 0;
 }
 
 .divider {
@@ -368,6 +507,9 @@ main section {
   max-width: 100%;
   background-position: center;
   background-size: cover;
+}
+
+.hero--home {
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -396,6 +538,10 @@ main section {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+.section--conversation {
+  padding-bottom: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -446,4 +592,148 @@ main section {
     font-size: 1.375rem;
     line-height: 1.8;
   }
+}
+.section--hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 1rem;
+  background: linear-gradient(to bottom, rgba(1, 1, 1, 0.4), rgba(5, 5, 5, 0.4)), url(../assets/images/hero-shows.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 50vh;
+  min-width: 100%;
+  max-width: 100%;
+  color: #fff;
+  gap: 1rem;
+}
+.section--hero h3 {
+  margin: 0px;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.section--hero .hero-soundcloud-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 1rem;
+}
+.section--hero .hero-soundcloud-wrapper h1 {
+  flex: 2.5;
+  margin-top: 0.25rem;
+}
+.section--hero .hero-soundcloud-wrapper #soundcloud-iframe {
+  flex: 2;
+}
+
+.concert-label, .show__label, .shows__header__label--location, .shows__header__label--name, .shows__header__label--date {
+  color: #AFAFAF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+}
+
+.section--shows {
+  margin-top: 2rem;
+}
+
+.shows__header {
+  display: none;
+}
+.show-article {
+  margin: 1rem 0rem;
+  border-bottom: 1px solid lightgrey;
+}
+.show-article div p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+.show__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5rem 0rem;
+}
+.show__date--date {
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 768px) {
+  .section--shows h2 {
+    padding-left: 1rem;
+  }
+  .shows-wrapper {
+    margin-bottom: 3rem;
+  }
+  .shows__header {
+    display: flex;
+    padding: 0rem 1rem;
+  }
+  .shows__header__label--date {
+    flex: 2;
+  }
+  .shows__header__label--name {
+    flex: 1.5;
+  }
+  .shows__header__label--location {
+    flex: 3;
+  }
+  .show-article {
+    display: flex;
+    padding: 1rem 1rem;
+    margin: 0px;
+    align-items: center;
+    cursor: pointer;
+  }
+  .show-article:hover {
+    background-color: #FAFAFA;
+  }
+  .show-article div p {
+    margin-top: 1rem;
+  }
+  .show__date {
+    flex: 2;
+  }
+  .show__name {
+    flex: 1.5;
+  }
+  .show__location {
+    flex: 1.5;
+  }
+  .show__button {
+    flex: 1.5;
+    margin-top: 0rem;
+    margin: 0px;
+  }
+  .show__label {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .section--hero .hero-soundcloud-wrapper {
+    flex-direction: row;
+  }
+  .section--shows {
+    display: flex;
+    padding-top: 2rem;
+  }
+  .section--shows h2 {
+    flex: 1;
+    margin-top: -1rem;
+    line-height: 2.25rem;
+    padding-left: 0px;
+  }
+  .shows-wrapper {
+    flex: 4;
+  }
+  .show-article {
+    padding: 1rem;
+  }
+}
+.selected-row {
+  background-color: #E1E1e1;
 }/*# sourceMappingURL=styles.css.map */

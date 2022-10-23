@@ -15,12 +15,14 @@
 @use 'partials/components/footer';
 @use 'partials/components/tables';
 @use "partials/components/forms";
+@use "partials/components/comment-feed";
 
     // Atoms
     @use "partials/components/atoms/atoms";
 
 // Pages
 @use "partials/pages/home";
+@use "partials/pages/shows";
 
 // Animations
 @use "partials/animations/animations";

@@ -1,0 +1,216 @@
+@use "../global/variables" as variables;
+@use "../helpers/mixins" as mixins;
+@use "../helpers/breakpoints" as breakpoints;
+
+
+
+// Hero
+.section--hero {
+    @include mixins.display-flex($flexDirection: column, $alignItems: left);
+    
+    background: linear-gradient(to bottom, rgba(1, 1, 1, 0.4), rgba(5, 5, 5, 0.4)), url(../assets/images/hero-shows.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    min-width: 100%;
+    max-width: 100%;
+    color: #fff;
+    gap: 1rem;
+
+    h3 {
+        margin: 0px;
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+
+
+    .hero-soundcloud-wrapper {
+        @include mixins.display-flex($flexDirection: column, $alignItems: left);
+
+
+        h1 {
+            flex: 2.5;
+            // margin: 0px;
+            margin-top: 0.25rem;
+        }
+        #soundcloud-iframe {
+            flex: 2;
+        }
+    }
+}
+
+// main.shows .hero--shows {
+    // align-items: left;
+// }
+
+// Atom to repeat
+.concert-label {
+    color: variables.$Silver;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.25px;
+}
+
+
+
+.section--shows {
+    margin-top: 2rem;
+}
+
+.shows__header {
+    display: none;
+
+    &__label {
+        &--date {
+            @extend .concert-label; 
+        }
+        &--name {
+            @extend .concert-label; 
+        }
+        &--location {
+            @extend .concert-label; 
+        }
+    }
+    
+   
+}
+
+
+.show {
+    &-article {
+        margin: 1rem 0rem;
+        border-bottom: 1px solid lightgrey;
+
+        div p {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+        
+    }
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 1.5rem 0rem;
+    }
+    &__label {
+        @extend .concert-label; 
+    }
+
+    &__date--date {
+        font-weight: 600;
+    }
+}
+
+
+
+// Over Tablet Sizes
+@include breakpoints.medium {
+    .section--shows {
+        h2 {
+            padding-left: 1rem;
+        }
+    }
+    .shows {
+        &-wrapper {
+            margin-bottom: 3rem;
+        }
+        &__header {
+            display: flex;
+            padding: 0rem 1rem;
+        }
+        &__header__label {
+            // flex values have to equal their respective show__label values
+            &--date {
+                flex: 2;
+            }
+            &--name {
+                flex: 1.5;
+            }
+            &--location {
+                // take up twice as much space as a standard flex
+                flex: 3;
+            }
+        }
+        
+    }
+
+    .show {
+        &-article {
+            display: flex;
+            padding: 1rem 1rem;
+            margin: 0px;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: variables.$Alabaster;
+            }
+
+            div p {
+                margin-top: 1rem;
+            }
+        }
+        &__date {
+            flex: 2;
+        }
+        &__name {
+            flex: 1.5;
+        }
+        &__location {
+            flex: 1.5;
+        }
+        &__button {
+            flex: 1.5;
+            // height: 3rem;
+            margin-top: 0rem;
+            margin: 0px;
+        }
+        &__label {
+            display: none;
+        }
+    }
+
+}
+
+@include breakpoints.large {
+
+    .section--hero {
+        .hero-soundcloud-wrapper {
+            flex-direction: row;
+        }
+    }
+    .section--shows {
+        display: flex;
+        padding-top: 2rem;
+
+        h2 {
+            flex: 1;
+            margin-top: -1rem;
+            line-height: 2.25rem;
+            padding-left: 0px;
+        }
+    }
+    .shows  {
+        &-wrapper {
+            flex: 4;
+        }
+        
+    }
+
+    .show {
+        &-article {
+            padding: 1rem;
+        }
+        
+    }
+    
+}
+
+
+// Row selected Class
+.selected-row {
+    background-color: variables.$Mercury;
+}

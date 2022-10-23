@@ -91,13 +91,21 @@
         &-column-wrapper__social {
             padding-top: 0.5rem;
         }
+
+        .contact-info {
+            &__email a {
+                font-size: 0.75rem;
+            }
+        }
     }
 
 }
 
 @include breakpoints.large {
     .footer {
+        padding: 2rem 6rem;
         grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
     // bandsite logo take the full fourth column YEAH That one
     // social logo spans 2
         &-column-wrapper:nth-of-type(2) {

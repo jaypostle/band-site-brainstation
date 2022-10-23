@@ -1,0 +1,107 @@
+@use "../helpers/breakpoints" as breakpoints;
+@use "../global/variables" as variables;
+
+.comment-feed {
+    &__form-wrapper {
+        display: flex;
+        gap: 1rem;
+    }
+    &__img {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: 1.5rem;
+    }
+
+    &__waterfall {
+        &__article {
+            display: flex;
+            gap: 1rem;
+            border-top: 1px solid variables.$Mercury;
+            border-bottom: 1px solid variables.$Mercury;
+
+            // &::before {
+            //     content: "";
+            //     display: block;
+            //     border-top: 1px solid variables.$Mercury;
+            //     width: 100%;
+            // }
+        }
+        &__text-info {
+            width: 100%;
+        }
+        &__meta-info {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        &__date-posted {
+            color: variables.$Silver;
+            margin-bottom: 0.5rem;
+        }
+        &__comment {
+            margin-top: 0px;
+            line-height: 1.5;
+        }
+        &__avatar {
+            background-color: grey;
+            margin-top: 2.5rem;
+        }
+    }
+
+    
+
+}
+
+
+// Tablets
+@include breakpoints.medium {
+
+    .comment-feed {
+        max-width: 80%;
+        margin: 0 auto;
+        
+        &__img {
+            width: 4rem;
+            height: 4rem;
+            margin-top: 0rem;
+
+            &--sample {
+                margin-top: 1.375rem;
+            }
+        }
+        &__waterfall {
+        
+            &__article {
+                padding: 1rem 0rem;
+                align-items: flex-start;
+            }
+            &__meta-info {
+                margin-bottom: 0.5rem;
+            }
+            &__name {
+                margin: 0px;
+            }
+            &__date-posted {
+                margin: 0px;
+            }
+        }
+    }
+
+}
+
+@include breakpoints.large {
+    .comment-feed {
+        max-width: 60%;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+}
+
+

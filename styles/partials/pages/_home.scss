@@ -28,8 +28,12 @@ main {
     max-width: 100%;
     background-position: center;
     background-size: cover;
-    @include mixins.display-flex($justifyContent: left);
+    // @include mixins.display-flex($justifyContent: left);
     
+}
+
+.hero--home {
+    @include mixins.display-flex($justifyContent: left);
 }
 
 // About
@@ -61,6 +65,11 @@ main {
         @include mixins.display-flex($flexDirection: column);
     
     }
+}
+
+// Conversation
+.section--conversation {
+    padding-bottom: 1rem;
 }
 
 
