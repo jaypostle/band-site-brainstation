@@ -11,3 +11,29 @@ Clear any error states from the form fields.
 -- hover states for table rows
 -- active effects
 
+
+
+- textarea in not a valid type for <input> Try using the <textarea> tag instead.
+// This wasn't working with JS
+
+
+
+
+- The following is an invalid use of the BEM Modifier. <section class=“section—conversation”> It should modify a class on the same element. Try making the changes to your
+classes’ names to conform to the BEM convention. Reference: getbem.com/naming/
+
+
+- Try removing commented out text that is not informative(not needed),empty rule sets(e.g. line 117, _home.scss), empty files(e.g. _tables.scss) for the final submission on
+Sprint-3
+// Continue This
+
+
+- Try using the right colours and font-style for the active / inactive nav link as per the Guideline.
+// Done
+
+- Consider removing the action=“” on the form element. The action attribute should not be left empty if used according to HTML spec.
+// Done
+
+- Consider applying target ‘_blank’ to the social link anchors. It is preferable to open a new tab when we redirect a user to an external site.
+// Done
+
