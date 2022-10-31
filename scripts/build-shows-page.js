@@ -25,9 +25,6 @@ const showsPromiseCall = () => {
     })
 }
 
-admin
-
-
 showsPromiseCall();
 
 // Replace concerts object data below with the promise call.
