@@ -1,7 +1,7 @@
 // Add Selected Row class to state of shows
 
 const concert = document.querySelectorAll('.show-article');
-console.log(concert);
+// console.log(concert);
 
 concert.forEach((concert) => {
     concert.addEventListener('click', function() {

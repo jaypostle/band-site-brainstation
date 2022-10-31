@@ -1,39 +1,40 @@
-// You must create the list of concerts using JavaScript DOM manipulation / flexbox layout.
-// You must have an array in JavaScript with all of concerts data and render the concerts HTML dynamically using the array data. It’s up to your discretion to decide on properties you create to represent all of the individual concert data.
-// No template literals should be used. All dynamic HTML should be added to DOM via DOM Methods for individual elements. Avoid bulk assigning stringified HTML using innerHTML
-// Utilize your knowledge of JavaScript DOM Manipulation and built in functions to create all the content between the hero image and the footer, as well as create your own functions as necessary. There should be no need to have any shows content housed within your html file for this section.
+
+const formatDate = (date) => {
+    let newDate = new Date(date).toDateString();
+    console.log(newDate);
+    return newDate;
+    
+}
+
+
+const API_KEY = "c810ce5c-f8f2-4ae0-8143-8c234f7039b8";
+
+const showsData = [];
+const showsPromiseCall = () => {
+    const showsPromise = axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${API_KEY}`);
+    showsPromise.then((response) => {
+        // console.log(response.data);
+        response.data.forEach((concertObj) => {
+            // insert format date function
+            concertObj.date = formatDate(concertObj.date);
+            showsData.push(concertObj);
+        })
+        console.log(showsData);
+
+        renderShows(showsData);
+    })
+}
+
+admin
+
+
+showsPromiseCall();
+
+// Replace concerts object data below with the promise call.
+// Format the date we receive into Monday MMMM DD YYYY
 
 
 
-// The individual rows of the Shows table will have different styling applied depending on the state of the table row. Utilize your knowledge of both JavaScript and Sass to accomplish this.
-// The individual rows of the Shows table need to have a hover state applied to them when a cursor is hovering over the table row, as per style guide. This can be done by utilizing a pseudo class within your Sass.
-// Additionally, clicking on an individual row should make that row "selected", applying a modifier CSS class via JavaScript. The row should stay “selected” until another row is clicked. Utilize your knowledge of both JavaScript and Sass to accomplish this.
-// Your styling will still be applied through your Sass files. Do not use the built in JavaScript DOM style method.
-
-
-
-// create an array of concert data
-// render it in the dom
-
-/*
-<div class="shows-wrapper">
-    <article class="show-article">
-        <div class="show__date">
-            <label class="show__label">Date</label>
-            <p class="show__data--date">Date</p>
-        </div>
-        <div class="show__name">
-            <label class="show__label">Name</label>
-            <p class="show__data--name">Name</p>
-        </div>
-        <div class="show__location">
-            <label class="show__label">Location</label>
-            <p class="show__data--location">Location</p>
-        </div>
-        <a class="show__button" href="">Buy Tickets</a>
-    </article>
-</div>
-*/
 
 const uniqueId = () => Math.random().toString(36).substring(2,9); 
 
@@ -136,7 +137,7 @@ const renderConcert = (concertObj, renderLocation) => {
     newPDate.textContent        = concertObj.date;
 
     newLabelName.textContent    = 'Name';
-    newPName.textContent        = concertObj.venue;
+    newPName.textContent        = concertObj.place;
 
     newLabelLocation.textContent    = 'Location';
     newPLocation.textContent        = concertObj.location;
@@ -159,4 +160,4 @@ const renderShows = (concerts) => {
 }
 
 // Call Shows Waterfall
-renderShows(concerts);
+// renderShows(concerts);

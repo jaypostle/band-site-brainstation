@@ -1,30 +1,113 @@
-// You must have a function called displayComment() that takes in one comment object as a parameter and displays it on the page using JavaScript DOM manipulation.
-// No template literals should be used. All dynamic HTML should be added to DOM via DOM Methods for individual elements. Avoid bulk assigning stringified HTML using innerHTML
-// You must use an HTML Form with the following functionality:
-// That submits using the addEventListener
-// Prevents the page from reloading when submitting a new comment
-// Constructs a new comment object
-// Pushes a new comment object to an array of comments
-// Clears all comments from the page
-// Re-renders to the page all comments from the comment array
-// Clears the input fields after submitting a new comment
+
+
+
+const formatDate = (date) => {
+    let newDate = new Date(date).toLocaleDateString();
+    // console.log(newDate);
+    return newDate;
+    
+}
+
+const sortByDate = (array) => {
+    array.sort((a, b) => (a.timestamp > b.timestamp) ? 1 : -1);
+}
+
+
+/// Old
+// const API_KEY = "c810ce5c-f8f2-4ae0-8143-8c234f7039b8";
+
+/// New
+const API_KEY = "6040e498-f580-4e34-bafa-83b231ce596f";
+
+const commentsData = [];
+
+const commentsPromiseCall = () => {
+    const commentsPromise = axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${API_KEY}`);
+    commentsPromise.then((response) => {
+        // console.log(response.data);
+        response.data.forEach((commentObj) => {
+            // insert format date function
+            commentObj.datePosted   = formatDate(commentObj.timestamp);
+            commentObj.authour      = commentObj.name;
+            
+            commentsData.push(commentObj);
+        })
+        console.log(commentsData);
+        sortByDate(commentsData);
+
+        renderCommentsWaterfall(commentsData);
+
+    })
+}
+
+
+commentsPromiseCall();
+
+const postComment = (name, comment) => {
+    const getCommentsPromise = axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${API_KEY}`);
+    const postCommentPromise = axios.post(`https://project-1-api.herokuapp.com/comments?api_key=${API_KEY}`,
+    { name: name, comment: comment }
+  )
+    .then((addComment) => {
+    console.log(addComment.data);
+    const commentObj = addComment.data;
+    commentObj.datePosted   = formatDate(commentObj.timestamp);
+    commentObj.authour      = commentObj.name;
+
+    commentsData.push(addComment.data);
+
+    renderCommentsWaterfall(commentsData);
+    // return getCommentsPromise;
+    })
+    // .then((result) => {
+    // console.log(result.data);
+    // // const newComment = result.data[0];
+    // // renderComment(newComment, elCommentWaterfall);
+    // renderCommentsWaterfall(commentsData);
+    // })
+
+    .catch((error) => {
+    console.log(error);
+    });
+}
+
+// postComment();
+
+
+// axios
+// .post(
+//   "https://project-1-api.herokuapp.com/comments?api_key=3e235735-6aa0-4a53-b7dd-cf57cdec1dce",
+//   { name: inputUserName, comment: inputComment }
+// )
+// .then((addComment) => {
+//   console.log(addComment); // post successful at this point
+//   event.target.reset();
+// });
+
+
+
+/* Attempt to Delete Comments */
+/*
+const id = '41ff5908-5af3-4c09-8fc1-8331b12f9f97';
+const deletePost = (id) => {
+    const deletePostPromise = axios.delete(`https://project-1-api.herokuapp.com/comments/${id}id?api_key=${API_KEY}`);
+    deletePostPromise.then((result) => {
+        console.log(result);
+    })
+    .catch((error) =>{
+        console.log(error)
+    })
+}
+
+
+deletePost('41ff5908-5af3-4c09-8fc1-8331b12f9f97')
+*/
+/* Attempt to Delete Comments */
 
 
 
 
 
-//STEPS
-
-
-
-
-// create submit error function
-// run it if the value of the field is empty
-// -- adds red border and adds helper text
-
-// then, change the text color and border color when you select the task or start writing again so it doesn't look like you still have an error
-
-// create strikethroughs to check items off the todolist
 
 const uniqueId = () => Math.random().toString(36).substring(2,9); 
 
@@ -133,7 +216,7 @@ const renderCommentsWaterfall = (arrayOfComments) => {
 
 }
 
-renderCommentsWaterfall(comments);
+// renderCommentsWaterfall(comments);
 
 // grab input and submit button dom elements
 // add event listener (upon click) to: create a new task obj with input field value, push that to the array, call renderTask with that object and the target build location
@@ -150,17 +233,28 @@ elCommentBtn.addEventListener('click', function(event) {
         errorState(elCommentField, elNameField);
         // ADD MY FUNCTION ERROR STATE
         return;
+
+        
     }
+
+    // POST COMMENT
+    postComment(elNameField.value, elCommentField.value);
     // create a new object
+
+    /* THIS IS THE OLD WAY TO ADD COMMENTS 
+
     const newComment = {
         id: uniqueId(), authour: elNameField.value, comment: elCommentField.value, datePosted: `${getCurrentDate()}`,
     }
-    // console.log(newComment);
 
     // push it to comments array
     comments.push(newComment);
     // console.log(comments);
     renderComment(newComment, elCommentWaterfall);
+    clearInput(elNameField);
+    clearInput(elCommentField);
+
+    */
     clearInput(elNameField);
     clearInput(elCommentField);
 })

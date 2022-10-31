@@ -33,7 +33,7 @@ main {
 }
 
 .hero--home {
-    @include mixins.display-flex($justifyContent: left);
+    @include mixins.display-flex($justifyContent: left, $alignItems: left);
 }
 
 // About
@@ -106,17 +106,13 @@ main {
         &__gallery {
             @include mixins.display-flex($flexDirection: row, $justifyContent: space-between, $gap: 0rem);
             flex-wrap: wrap;
-            // row-gap: 1rem;
             row-gap: 5vw;
         
         }
         .gallery-item {
-            // width: (100%/3);
             flex: 0 1 30%;
 
-            // &__img {
-            //     // object-fit: cover;
-            // }
+      
             
         }
 
